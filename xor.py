@@ -1,0 +1,18 @@
+from binascii import hexlify,unhexlify
+
+
+flag='\x1f \xeca_\xac\xef\xae\xffX F\x90\xacV\xcf\x9c\xab\x86W\xb1\xb9c\x06\xf9\x1c\xa6G\xb2\x96\xf3'
+
+key='yL\x8d\x06$\x9f\x97\xcd\x93-S/\xe6\xc5"\xb6\xc3\x9f\xf2\x08\xd8\xcdVY\x9fu\xc8t\xc1\xe2\x8e'
+
+
+flag=int(hexlify(flag),16)
+key=int(hexlify(key),16)
+
+cipher=flag^key
+
+c= hex(cipher)[2:].strip('L')
+print unhexlify(c)
+
+
+# flag{3xclusivity_4t_it5_fin3st}
